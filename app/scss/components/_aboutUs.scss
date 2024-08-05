@@ -1,70 +1,69 @@
-
-.about_us_section{
-    margin-top: 40px;
-    margin-bottom: 40px;
+.about_us_section {
+  margin-top: 40px;
+  margin-bottom: 40px;
 }
 
 .about_us_title {
-    font-family: Exo;
-    font-weight: 700;
-    font-size: 24px;
-    line-height: 1.4;
-    text-align: center;
-    margin-bottom: 40px;
-    text-transform: capitalize;
-    position: relative;
+  font-family: Exo;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 1.4;
+  text-align: center;
+  margin-bottom: 40px;
+  text-transform: capitalize;
+  position: relative;
 
-    @media screen and (min-width: 1200px) {
-        font-size: 32px;
-    }
+  @media screen and (min-width: 1200px) {
+    font-size: 32px;
+  }
 }
 
-.about_us_wrapper{
-    @media screen and (min-width: 1200px) {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        gap: 170px;
-    }
+.about_us_wrapper {
+  @media screen and (min-width: 1200px) {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 170px;
+  }
 }
 
-.about_us_wrapper_text{
-    @media screen and (max-width: 1199.98px) {
-        margin-bottom: 24px;
-        display: flex;
-        flex-direction: column;
-    }
-
-    @media screen and (min-width: 1200px) {
-        display: flex;
-        flex-direction: column;
-    }
-}
-
-.about_us_smaller_title{
-    font-family: Exo;
-    font-weight: 700;
-    font-size: 18px;
-    line-height: 1.4;
-    color: var(--black-color);
-    margin-bottom: 16px;
-    text-transform: capitalize;
-
-    @media screen and (min-width: 1200px) {
-       font-size: 24px;
-    }
-}
-
-.about_us_text{
-    font-family: Open sans;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 1.5;
-    color: var(--text-color);
+.about_us_wrapper_text {
+  @media screen and (max-width: 1199.98px) {
     margin-bottom: 24px;
+    display: flex;
+    flex-direction: column;
+  }
 
-    &:last-child{
-        margin-bottom: 0px;
-    }
+  @media screen and (min-width: 1200px) {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.about_us_smaller_title {
+  font-family: Exo;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.4;
+  color: var(--black-color);
+  margin-bottom: 16px;
+  text-transform: capitalize;
+
+  @media screen and (min-width: 1200px) {
+    font-size: 24px;
+  }
+}
+
+.about_us_text {
+  font-family: Open sans;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--text-color);
+  margin-bottom: 24px;
+
+  &:last-child {
+    margin-bottom: 0px;
+  }
 }

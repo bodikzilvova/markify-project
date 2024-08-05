@@ -21,7 +21,7 @@
   flex-direction: row;
   justify-content: center;
 
-  @media  (max-width: 768px) {
+  @media (max-width: 768px) {
     display: none;
   }
 }
@@ -48,7 +48,7 @@
   }
 }
 
-.header_nav_button{
+.header_nav_button {
   width: 111px;
   height: 48px;
   background-color: var(--main-color);
