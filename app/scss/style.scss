@@ -1,0 +1,47 @@
+@import url("https://fonts.googleapis.com/css2?family=Exo:wght@700&family=Open+Sans:wght@400;600;700&display=swap");
+
+@import "./utils/vars";
+@import "./base/reset";
+
+@import "./components/container";
+@import "./components/header";
+@import "./components/hero";
+@import "./components/partners";
+@import "./components/aboutUs";
+@import "./components/services";
+@import "./components/agency";
+@import "./components/footer";
+
+body {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 100vw;
+  margin: 0;
+  overflow-x: hidden;
+
+  @media screen and (max-height: 1199.98px) {
+    background-image: url("../images/dist/bg-mob.png");
+    max-height: 375px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    background-image: url("../images/dist/bg_desktop.webp");
+  }
+}
+
+.underline {
+  position: relative;
+  display: inline-block;
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 2px;
+    left: -4px;
+    width: 103%;
+    height: 12px;
+    border-radius: 9px;
+    background-color: #e9a923;
+    z-index: -1;
+  }
+}
