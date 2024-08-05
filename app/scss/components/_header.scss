@@ -12,7 +12,7 @@
 
 .header_logo {
   position: relative;
-  z-index: 3;
+  z-index: 11;
   cursor: pointer;
 }
 
@@ -75,7 +75,7 @@
   position: relative;
   width: 24px;
   height: 16px;
-  z-index: 3;
+  z-index: 11;
   cursor: pointer;
 
   @media screen and (min-width: 768px) {
@@ -104,7 +104,7 @@
   transition: all 0.3s ease-in-out;
   transform: scaleY(0);
   transform-origin: top;
-  z-index: 1;
+  z-index: 8;
 }
 
 .nav_wrapper {
