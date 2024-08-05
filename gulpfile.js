@@ -9,11 +9,10 @@ import clean from "gulp-clean";
 import webp from "gulp-webp";
 import imagemin from "gulp-imagemin";
 import newer from "gulp-newer";
-import fonter from "gulp-fonter";
-import ttf2woff2 from "gulp-ttf2woff2";
 import svgstore from "gulp-svgstore";
 import include from "gulp-include";
 import cache from "gulp-cache";
+import ghPages from "gulp-gh-pages"
 
 const { src, dest, watch, parallel, series } = gulp;
 const scss = gulpSass(dartSass);
@@ -29,6 +28,11 @@ function pages() {
     )
     .pipe(dest("app"))
     .pipe(browserSyncInstance.stream());
+}
+
+function deploy (){
+  return src('dist/**/*')
+  .pipe(ghPages());
 }
 
 function styles() {
@@ -70,18 +74,6 @@ function sprite() {
     .pipe(dest("app/images/dist"));
 }
 
-function fonts() {
-  return src("app/fonts/src/*.*")
-    .pipe(
-      fonter({
-        formats: ["woff", "ttf"],
-      })
-    )
-    .pipe(src("app/fonts/*.ttf"))
-    .pipe(ttf2woff2())
-    .pipe(dest("app/fonts"));
-}
-
 function watching() {
   browserSyncInstance.init({
     server: {
@@ -111,7 +103,6 @@ function building() {
       "app/images/dist/*.*",
       "!app/images/dist/*.svg",
       "app/images/dist/dist.svg",
-      "app/fonts/*.*",
       "app/js/main.min.js",
       "app/*.html",
     ],
@@ -122,6 +113,6 @@ function building() {
 }
 
 export const build = series(cleanDist, building);
-export { styles, scripts, watching, images, sprite, fonts, building, pages, clearCache };
+export { styles, scripts, watching, images, sprite, building, pages, clearCache, deploy };
 
 export default parallel(clearCache, styles, scripts, pages, watching);
