@@ -12,7 +12,7 @@ import newer from "gulp-newer";
 import svgstore from "gulp-svgstore";
 import include from "gulp-include";
 import cache from "gulp-cache";
-import ghPages from "gulp-gh-pages"
+import ghPages from "gulp-gh-pages";
 
 const { src, dest, watch, parallel, series } = gulp;
 const scss = gulpSass(dartSass);
@@ -30,9 +30,8 @@ function pages() {
     .pipe(browserSyncInstance.stream());
 }
 
-function deploy (){
-  return src('dist/**/*')
-  .pipe(ghPages());
+function deploy() {
+  return src("dist/**/*").pipe(ghPages());
 }
 
 function styles() {
@@ -87,7 +86,6 @@ function watching() {
   watch(["app/*.html"]).on("change", browserSyncInstance.reload);
 }
 
-
 function cleanDist() {
   return src("dist", { allowEmpty: true }).pipe(clean());
 }
@@ -113,6 +111,16 @@ function building() {
 }
 
 export const build = series(cleanDist, building);
-export { styles, scripts, watching, images, sprite, building, pages, clearCache, deploy };
+export {
+  styles,
+  scripts,
+  watching,
+  images,
+  sprite,
+  building,
+  pages,
+  clearCache,
+  deploy,
+};
 
 export default parallel(clearCache, styles, scripts, pages, watching);
